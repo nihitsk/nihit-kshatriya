@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nihit Kshatriya</title>
+<meta name="description" content="Nihit Kshatriya — investor relations, writing, and a few other things.">
+<style>
+  :root{
+    --bg: #17140f;
+    --bg-card: #211d17;
+    --border: #34302a;
+    --text: #f2ede4;
+    --text-dim: #a89f92;
+    --text-faint: #766c60;
+    --accent: #e07a3f;
+    --accent-dim: #c4693a;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 40px;
+  }
+  h1{
+    font-family: Georgia, 'Iowan Old Style', serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    letter-spacing: 0.5px;
+    margin: 0 0 18px;
+    color: var(--text);
+  }
+  .tagline{
+    color: var(--text-dim);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 0 14px;
+  }
+  .aside-line{
+    color: var(--text-faint);
+    font-size: 0.92rem;
+    font-style: italic;
+    margin: 4px 0;
+  }
+  hr.rule{
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0 28px;
+  }
+  h2{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+  /* Work / Education rows */
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .row:last-child{ border-bottom: none; }
+  .row-left{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .row-name{ font-weight: 600; font-size: 0.98rem; color: var(--text); }
+  .row-role{ font-size: 0.88rem; color: var(--text-dim); font-style: italic; }
+  .row-year{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+  /* Freshly pressed cards */
+  .card-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 480px){
+    .card-grid{ grid-template-columns: 1fr; }
+    .wrap{ padding: 40px 18px 32px; }
+    h1{ font-size: 1.9rem; }
+    .row{ align-items: flex-start; }
+    .row-left{ flex-direction: column; gap: 2px; }
+    .stats-row{ flex-wrap: wrap; row-gap: 20px; }
+    .stat{ flex: 0 0 45%; }
+    .me-block{ flex-direction: column; align-items: flex-start; }
+    .tabs{ flex-wrap: wrap; gap: 10px 16px; }
+  }
+  .card{
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .card h3{
+    font-family: Georgia, serif;
+    font-size: 1.02rem;
+    font-weight: 400;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+  .card p{
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin: 0 0 12px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .card a{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .card a:hover{ text-decoration: underline; }
+  /* Books tabs */
+  .tabs{
+    display: flex;
+    gap: 22px;
+    margin-bottom: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+  }
+  .tab{
+    color: var(--text-faint);
+    cursor: pointer;
+    padding-bottom: 6px;
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    font-family: inherit;
+  }
+  .tab.active{
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+  }
+  .book-row{
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .book-row:last-child{ border-bottom: none; }
+  .book-title{ font-weight: 600; font-size: 0.96rem; }
+  .book-author{ font-size: 0.82rem; color: var(--text-faint); font-family: 'Helvetica Neue', Arial, sans-serif;}
+  .book-list{ display: none; }
+  .book-list.active{ display: block; }
+  /* Stats */
+  .stats-intro{
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+  }
+  .stats-row{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .stat{ flex: 1; }
+  .stat-icon{ font-size: 1.1rem; margin-bottom: 6px; }
+  .stat-num{ font-weight: 700; font-size: 1rem; color: var(--text); }
+  .stat-label{ font-size: 0.72rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+  /* School of life quotes */
+  .quotes{ display: flex; flex-direction: column; gap: 14px; }
+  .quote{
+    font-style: italic;
+    color: var(--text);
+    font-size: 1.05rem;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent-dim);
+  }
+  /* That's me */
+  .me-block{
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .avatar{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ffb37a, var(--accent) 60%, #5a2f18 100%);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .avatar-ring{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--bg);
+  }
+  .me-text p{
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin: 0 0 10px;
+  }
+  .contact{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+  }
+  .contact a{
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+  .contact a:hover{ color: var(--accent); }
+  footer{
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 0.75rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-top: 48px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Nihit Kshatriya</h1>
+  <p class="tagline">Money is a means to an end. Its meant to be spent. I find joy in helping people get there and live the life that actually makes them happy.</p>
+  <p class="aside-line">Slow reader. Even slower thinker.</p>
+  <p class="aside-line">That yellow brick in a red wall.</p>
+
+  <hr class="rule">
+
+  <h2>Work</h2>
+  <div class="row">
+    <div class="row-left"><span class="row-name">Capitalmind</span><span class="row-role">Head - Investor Relations</span></div>
+    <span class="row-year">2024</span>
+  </div>
+  <div class="row">
+    <div class="row-left"><span class="row-name">Prayaas Pharmacy</span><span class="row-role">Founder</span></div>
+    <span class="row-year">2017</span>
+  </div>
+  <div class="row">
+    <div class="row-left"><span class="row-name">The Nielsen Company</span><span class="row-role">Data Scientist</span></div>
+    <span class="row-year">2013</span>
+  </div>
+  <div class="row">
+    <div class="row-left"><span class="row-name">Usha International</span><span class="row-role">Management Trainee</span></div>
+    <span class="row-year">2012</span>
+  </div>
+
+  <hr class="rule">
+
+  <h2>Education</h2>
+  <div class="row">
+    <div class="row-left"><span class="row-name">Nirma University</span><span class="row-role">Masters in Business Administration (MBA)</span></div>
+    <span class="row-year">—</span>
+  </div>
+  <div class="row">
+    <div class="row-left"><span class="row-name">Sardar Patel University</span><span class="row-role">B.Tech – Information Technology</span></div>
+    <span class="row-year">—</span>
+  </div>
+
+  <hr class="rule">
+
+  <h2>Freshly Pressed</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Notes on Compounding</h3>
+      <p>Book takeaways, long term thinking, and why staying invested matters more than being right.</p>
+      <a href="#">Read →</a>
+    </div>
+    <div class="card">
+      <h3>The Useful Kind of Taste</h3>
+      <p>A short reflection on judgement, refinement, and the craft behind good decisions.</p>
+      <a href="#">Read →</a>
+    </div>
+    <div class="card">
+      <h3>Working With Better Questions</h3>
+      <p>The hardest part of any hard problem is asking the right question.</p>
+      <a href="#">Read →</a>
+    </div>
+    <div class="card">
+      <h3>A Personal Operating System</h3>
+      <p>Habits, defaults, and the tiny systems that quietly keep things moving.</p>
+      <a href="#">Read →</a>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <h2>Books</h2>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('reading', this)">Reading</button>
+    <button class="tab" onclick="showTab('business', this)">Business</button>
+    <button class="tab" onclick="showTab('biography', this)">Biography</button>
+    <button class="tab" onclick="showTab('memoir', this)">Memoir</button>
+  </div>
+
+  <div id="reading" class="book-list active">
+    <div class="book-row"><div class="book-title">The Most Important Thing</div><div class="book-author">Howard Marks</div></div>
+    <div class="book-row"><div class="book-title">One Up On Wall Street</div><div class="book-author">Peter Lynch</div></div>
+    <div class="book-row"><div class="book-title">The Psychology of Money</div><div class="book-author">Morgan Housel</div></div>
+    <div class="book-row"><div class="book-title">Margin of Safety</div><div class="book-author">Seth Klarman</div></div>
+    <div class="book-row"><div class="book-title">Poor Charlie's Almanack</div><div class="book-author">Charlie Munger</div></div>
+  </div>
+  <div id="business" class="book-list">
+    <div class="book-row"><div class="book-title">Add your business reads here</div><div class="book-author">—</div></div>
+  </div>
+  <div id="biography" class="book-list">
+    <div class="book-row"><div class="book-title">Add your biography reads here</div><div class="book-author">—</div></div>
+  </div>
+  <div id="memoir" class="book-list">
+    <div class="book-row"><div class="book-title">Add your memoir reads here</div><div class="book-author">—</div></div>
+  </div>
+
+  <hr class="rule">
+
+  <p class="stats-intro">Sports have played a big role in how I live life today. I play basketball, tennis, swimming, and track a few stats along the way.</p>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-icon">🎖️</div>
+      <div class="stat-num">178 days</div>
+      <div class="stat-label">Streak</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">♡</div>
+      <div class="stat-num">58 bpm</div>
+      <div class="stat-label">RHR</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">📈</div>
+      <div class="stat-num">8,500 steps</div>
+      <div class="stat-label">Daily goal</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">⚡</div>
+      <div class="stat-num">61 ms</div>
+      <div class="stat-label">HRV</div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <h2>School of Life</h2>
+  <div class="quotes">
+    <p class="quote">Most shortcuts eventually invoice you.</p>
+    <p class="quote">A calm mind ships cleaner work.</p>
+    <p class="quote">You can't outsource your taste.</p>
+    <p class="quote">Being early is often just being lonely first.</p>
+  </div>
+
+  <hr class="rule">
+
+  <h2>That's Me</h2>
+  <div class="me-block">
+    <div class="avatar"><div class="avatar-ring"></div></div>
+    <div class="me-text">
+      <p>I like building things. The joy in seeing things come together is something else. Growing up, learning alongside people who make it look easy.</p>
+      <div class="contact">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener">𝕏</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 Nihit Kshatriya. All rights reserved.</footer>
+
+</div>
+
+<script>
+  function showTab(id, el){
+    document.querySelectorAll('.book-list').forEach(function(el){ el.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
