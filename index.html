@@ -51,7 +51,7 @@
   .bio{ color:var(--sec); margin:0; font-size:1.25rem; }
 
   /* ---------- sections ---------- */
-  .sec{ margin-top:66px; }
+  .sec{ margin-top:46px; }
   .sec-rule{ border:none; border-top:2px solid var(--rule2); margin:0 0 22px; }
   .sec-t{
     font-size:2rem; font-weight:600; line-height:1.22;
@@ -83,7 +83,7 @@
   .row:last-child{ border-bottom:none; }
   .row-l{ flex:1; min-width:0; }
   .row-n{ font-weight:600; }
-  .row-r{ color:var(--sec); font-size:1.04rem; }
+  .row-r{ color:var(--sec); font-size:1.04rem; display:block; margin-top:2px; }
   .row-y{ color:var(--sec); font-size:1.04rem; white-space:nowrap;
     font-variant-numeric:oldstyle-nums; }
 
@@ -175,12 +175,13 @@
 
   /* ---------- connect ---------- */
   .cn{
-    display:flex; justify-content:space-between; align-items:baseline; gap:18px;
-    padding:13px 0; border-bottom:1px solid var(--rule);
+    display:flex; align-items:baseline; gap:8px;
+    padding:10px 0; border-bottom:1px solid var(--rule);
     text-decoration:none; color:inherit;
   }
   .cn:last-child{ border-bottom:none; }
   .cn-p{ font-weight:600; }
+  .cn-p::after{ content:":"; }
   .cn-v{ color:var(--sec); font-size:1.04rem; }
   .cn:hover .cn-v{ color:var(--brick); }
 
@@ -200,15 +201,15 @@
     .hero{ flex-wrap:wrap; align-items:center; gap:16px; }
     .hero-text{ display:contents; }
     .nm-break{ display:inline; }
-    h1{ font-size:1.9rem; line-height:1.14; letter-spacing:-.01em; margin:0; flex:0 0 auto; }
-    .photo{ width:78px; height:78px; border-radius:50%; flex:0 0 auto; }
+    h1{ font-size:2.3rem; line-height:1.12; letter-spacing:-.01em; margin:0; flex:0 0 auto; }
+    .photo{ width:124px; height:124px; border-radius:50%; flex:0 0 auto; }
     .bio{ flex:0 0 100%; margin-top:16px; font-size:1rem; }
-    .sec{ margin-top:50px; }
+    .sec{ margin-top:35px; }
     .sec-t{ font-size:1.6rem; }
     .q{ font-size:1.12rem; }
     .row{ flex-direction:column; gap:2px; }
     .row-y{ order:-1; font-size:1rem; }
-    .cn{ flex-direction:column; gap:1px; }
+    
     .ot-grid{ grid-template-columns:1fr; gap:14px; }
   }
 </style>
@@ -235,7 +236,7 @@
     <div id="p-work" class="panel about active">
       <div class="b-row">
         <div class="b-head">
-          <div class="row-l"><span class="row-n">Capitalmind Mutual Fund</span> <span class="row-r">Head - Investor Relations</span></div>
+          <div class="row-l"><span class="row-n">Capitalmind Mutual Fund</span><span class="row-r">Head - Investor Relations</span></div>
           <span class="row-y">2024</span>
           <button class="note-btn" aria-expanded="false" aria-label="More on Capitalmind Mutual Fund" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button>
         </div>
@@ -243,7 +244,7 @@
       </div>
       <div class="b-row">
         <div class="b-head">
-          <div class="row-l"><span class="row-n">Prayaas Pharmacy</span> <span class="row-r">Founder</span></div>
+          <div class="row-l"><span class="row-n">Prayaas Pharmacy</span><span class="row-r">Founder</span></div>
           <span class="row-y">2017</span>
           <button class="note-btn" aria-expanded="false" aria-label="More on Prayaas Pharmacy" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button>
         </div>
@@ -251,7 +252,7 @@
       </div>
       <div class="b-row">
         <div class="b-head">
-          <div class="row-l"><span class="row-n">The Nielsen Company</span> <span class="row-r">Data Scientist</span></div>
+          <div class="row-l"><span class="row-n">The Nielsen Company</span><span class="row-r">Data Scientist</span></div>
           <span class="row-y">2013</span>
           <button class="note-btn" aria-expanded="false" aria-label="More on The Nielsen Company" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button>
         </div>
@@ -259,7 +260,7 @@
       </div>
       <div class="b-row">
         <div class="b-head">
-          <div class="row-l"><span class="row-n">Usha International</span> <span class="row-r">Management Trainee</span></div>
+          <div class="row-l"><span class="row-n">Usha International</span><span class="row-r">Management Trainee</span></div>
           <span class="row-y">2012</span>
           <button class="note-btn" aria-expanded="false" aria-label="More on Usha International" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button>
         </div>
@@ -269,7 +270,7 @@
     <div id="p-edu" class="panel about">
       <div class="b-row">
         <div class="b-head">
-          <div class="row-l"><span class="row-n">Nirma University</span> <span class="row-r">Masters in Business Administration (MBA)</span></div>
+          <div class="row-l"><span class="row-n">Nirma University</span><span class="row-r">Masters in Business Administration (MBA)</span></div>
           <span class="row-y">2012</span>
           <button class="note-btn" aria-expanded="false" aria-label="More on Nirma University" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button>
         </div>
@@ -277,7 +278,7 @@
       </div>
       <div class="b-row">
         <div class="b-head">
-          <div class="row-l"><span class="row-n">Sardar Patel University</span> <span class="row-r">B.Tech – Information Technology</span></div>
+          <div class="row-l"><span class="row-n">Sardar Patel University</span><span class="row-r">B.Tech – Information Technology</span></div>
           <span class="row-y">2010</span>
           <button class="note-btn" aria-expanded="false" aria-label="More on Sardar Patel University" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button>
         </div>
