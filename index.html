@@ -128,14 +128,12 @@
     color:var(--ink); font-size:1.125rem; line-height:1.62;
   }
   .note.open{ display:block; }
-  .b-row-empty .b-t{ color:var(--sec); font-weight:400; }
 
   /* ---------- quotes ---------- */
   .q-row{ padding:17px 0; border-bottom:1px solid var(--rule); }
   .q-row:last-child{ border-bottom:none; }
   .q{ font-size:1.2rem; line-height:1.42; margin:0 0 6px; letter-spacing:-.008em; }
   .q-c{ color:var(--brick); font-size:1.04rem; margin:0; }
-  .q-row-empty .q{ color:var(--sec); font-size:1.1rem; }
 
   /* ---------- right now ---------- */
   .rn-sub{ color:var(--brick); margin:0 0 18px; font-size:1.1875rem; }
@@ -155,7 +153,7 @@
   }
   body.js .rn-more:hover{ background:var(--mark); }
   body.js .rn.open .rn-more{ display:none; }
-  .rn-rest p:first-child{ margin-top:16px; }
+
 
   /* ---------- out there ---------- */
   .ot-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -335,7 +333,6 @@
       <div class="b-row"><div class="b-head"><div class="b-main"><div class="b-t">The Money Trap</div><div class="b-a">Alok Sama</div></div>
         <button class="note-btn" aria-expanded="false" aria-label="My note on The Money Trap" onclick="note(this)"><svg class="chev" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg></button></div>
         <div class="note">Truly gripping storytelling and a peek into the world of Masa (Softbank). Unreal to see billion-dollar decisions made on instinct and $5,000 bottles of La Tâche.</div></div>
-      <div class="b-row b-row-empty"><div class="b-head"><div class="b-main"><div class="b-t">More to come</div></div></div></div>
     </div>
 
     <div id="p-inv" class="panel books">
@@ -380,8 +377,6 @@
     <div id="p-life" class="panel val active">
       <div class="q-row"><p class="q">Play long-term games with long-term people.</p><p class="q-c">Naval Ravikant</p></div>
       <div class="q-row"><p class="q">People will forget what you said. People will forget what you did. But people will never forget how you made them feel.</p><p class="q-c">Maya Angelou</p></div>
-      <div class="q-row q-row-empty"><p class="q">More to come</p></div>
-      <div class="q-row q-row-empty"><p class="q">More to come</p></div>
     </div>
     <div id="p-invv" class="panel val">
       <div class="q-row"><p class="q">Diversification is the only free lunch in investing.</p><p class="q-c">Harry Markowitz</p></div>
@@ -391,15 +386,12 @@
     </div>
     <div id="p-wrk" class="panel val">
       <div class="q-row"><p class="q">The first principle is that you must not fool yourself — and you are the easiest person to fool.</p><p class="q-c">Richard Feynman</p></div>
-      <div class="q-row q-row-empty"><p class="q">More to come</p></div>
-      <div class="q-row q-row-empty"><p class="q">More to come</p></div>
-      <div class="q-row q-row-empty"><p class="q">More to come</p></div>
     </div>
   </div>
 
   <div class="sec">
     <hr class="sec-rule">
-    <h2 class="sec-t"><span class="mk">Out There</span></h2>
+    <h2 class="sec-t"><span class="mk">Writings</span></h2>
     <p class="sec-intro">I write to clear my head. Some of it turns out to make more sense than I expected.</p>
     <div class="ot-grid">
       <div class="ot-card">
